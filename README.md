@@ -1,4 +1,4 @@
-# gateway-service-boot
+# gateway-service
 
 An API Gateway using Spring Boot framework.
 
