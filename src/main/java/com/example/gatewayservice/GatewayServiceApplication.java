@@ -17,7 +17,8 @@ public class GatewayServiceApplication {
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
 		return builder.routes()
 				.route("path_route", r -> r.path("/greeting").and().method("POST").uri("http://localhost:8081"))
-				.route("path_route", r -> r.path("/greeting/**").and().method("GET").uri("http://localhost:8082"))
+				.route("path_route", r -> r.path("/greeting/**").and().method("GET").filters(f -> f.addResponseHeader("Cache-Control", "max-age=300"))
+						.uri("http://localhost:8082"))
 				.build();
 	}
 
