@@ -27,3 +27,17 @@ resources/application.yml in API Gateway project.
 $ curl -i http://localhost:9090/greeting/version
 
 which will redirect to service on port 8082 with return value version 2.
+
+## Monitoring of app using Spring Boot actuator
+We can monitor our app using health endpts etc. like,
+
+$ curl -i http://localhost:9090/actuator/health
+
+to check if app is up.
+
+$ curl -i http://localhost:9090/actuator/metrics
+
+$ curl http://localhost:9090/actuator/metrics/http.server.requests | jq '.'
+
+to display insights like count of requests, total time taken and maximal time taken.
+
