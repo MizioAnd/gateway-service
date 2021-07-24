@@ -31,6 +31,10 @@ which will redirect to service on port 8082 with return value version 2.
 ## Monitoring of app using Spring Boot actuator
 We can monitor our app using health endpts etc. like,
 
+$ curl -i http://localhost:9090/actuator/
+
+for all endpts.
+
 $ curl -i http://localhost:9090/actuator/health
 
 to check if app is up.
